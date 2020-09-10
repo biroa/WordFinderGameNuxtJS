@@ -10,7 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b43ee02-bb45-445b-aab0-17e22e1d710f" name="Default Changelist" comment="" />
+    <list default="true" id="3b43ee02-bb45-445b-aab0-17e22e1d710f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordFinderGameNuxtJS/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/WordFinderGameNuxtJS/pages/index.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +52,7 @@
       <updated>1599650020845</updated>
       <workItem from="1599650022183" duration="19054000" />
       <workItem from="1599728778487" duration="6660000" />
-      <workItem from="1599736429977" duration="159000" />
+      <workItem from="1599736429977" duration="5020000" />
     </task>
     <servers />
   </component>
@@ -69,9 +72,9 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="839" y="444" width="933" height="556" key="#ESLint" timestamp="1599735745400">
+    <state x="839" y="444" width="933" height="556" key="#ESLint" timestamp="1599743402332">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="839" y="444" width="933" height="556" key="#ESLint/67.27.1853.1053@67.27.1853.1053" timestamp="1599735745400" />
+    <state x="839" y="444" width="933" height="556" key="#ESLint/67.27.1853.1053@67.27.1853.1053" timestamp="1599743402332" />
   </component>
 </project>
