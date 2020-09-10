@@ -81,6 +81,9 @@ export default {
     return {
       points: 'test'
     }
+  },
+  mounted () {
+    console.log(this.$_.range(2000, 2020))
   }
 }
 </script>
