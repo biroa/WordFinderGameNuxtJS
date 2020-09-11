@@ -1,11 +1,25 @@
 <template>
   <div>
-    <TheHeader />
+
+    <TheGameStartModal
+      :project-title="WordFinderGameNuxtJS.title"
+    />
+
+    <TheHeader
+      :project-title="WordFinderGameNuxtJS.title"
+    />
+
     <Nuxt />
-    <TheRulesModal />
-    <TheScoreBoardModal />
-    <TheGameStartModal />
-    <TheFooter />
+
+    <TheRulesModal
+      :project-title="WordFinderGameNuxtJS.title"
+    />
+    <TheScoreBoardModal
+      :project-title="WordFinderGameNuxtJS.title"
+    />
+    <TheFooter
+      :project-title="WordFinderGameNuxtJS.title"
+    />
   </div>
 </template>
 
@@ -65,3 +79,15 @@ html {
   background-color: #35495e;
 }
 </style>
+
+<script>
+export default {
+  data () {
+    return {
+      WordFinderGameNuxtJS: {
+        title: 'WordFinderGameNuxtJS'
+      }
+    }
+  }
+}
+</script>

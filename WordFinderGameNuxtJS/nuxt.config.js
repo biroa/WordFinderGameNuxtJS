@@ -35,7 +35,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    { src: '~/plugins/underscore', ssr: false }
+    { src: '~/plugins/underscore', ssr: false },
+    { src: '~/plugins/crono', ssr: false }
   ],
   /*
   ** Auto import components

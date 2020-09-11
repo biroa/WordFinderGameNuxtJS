@@ -1,7 +1,7 @@
 <template>
   <!-- Footer Nav -->
   <b-navbar toggleable="lg" type="dark" variant="secondary" fixed="bottom">
-    <b-navbar-brand href="#">WordFinderGameNuxtJS</b-navbar-brand>
+    <b-navbar-brand href="#">{{ projectTitle }}</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse-bottom"></b-navbar-toggle>
 
@@ -14,3 +14,9 @@
     </b-collapse>
   </b-navbar>
 </template>
+
+<script>
+export default {
+  props: ['projectTitle']
+}
+</script>

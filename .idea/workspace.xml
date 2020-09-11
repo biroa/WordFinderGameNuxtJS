@@ -10,12 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b43ee02-bb45-445b-aab0-17e22e1d710f" name="Default Changelist" comment="add crono plugin src">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WordFinderGameNuxtJS/components/TheGameStartModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/WordFinderGameNuxtJS/components/TheGameStartModal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WordFinderGameNuxtJS/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/WordFinderGameNuxtJS/layouts/default.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WordFinderGameNuxtJS/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/WordFinderGameNuxtJS/pages/index.vue" afterDir="false" />
-    </list>
+    <list default="true" id="3b43ee02-bb45-445b-aab0-17e22e1d710f" name="Default Changelist" comment="add the username and show the searched words in the list" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,6 +37,7 @@
     <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/WordFinderGameNuxtJS/node_modules/eslint" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -55,7 +51,7 @@
       <workItem from="1599650022183" duration="19054000" />
       <workItem from="1599728778487" duration="6660000" />
       <workItem from="1599736429977" duration="12861000" />
-      <workItem from="1599817356490" duration="16205000" />
+      <workItem from="1599817356490" duration="16594000" />
     </task>
     <task id="LOCAL-00001" summary="Counting the points of the dictionary's words in mounted method.">
       <created>1599745497518</created>
@@ -85,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599852237488</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add the username and show the searched words in the list">
+      <created>1599860320477</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1599860320477</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,17 +120,18 @@
     <MESSAGE value="Counting the points of the dictionary's words in mounted method." />
     <MESSAGE value="Set date, timer &amp; game title properties on components" />
     <MESSAGE value="add crono plugin src" />
-    <option name="LAST_COMMIT_MESSAGE" value="add crono plugin src" />
+    <MESSAGE value="add the username and show the searched words in the list" />
+    <option name="LAST_COMMIT_MESSAGE" value="add the username and show the searched words in the list" />
   </component>
   <component name="WindowStateProjectService">
     <state x="839" y="444" width="933" height="556" key="#ESLint" timestamp="1599820680340">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="839" y="444" width="933" height="556" key="#ESLint/67.27.1853.1053@67.27.1853.1053" timestamp="1599820680340" />
-    <state x="242" y="117" width="1482" height="872" key="DiffContextDialog" timestamp="1599852124707">
+    <state x="242" y="117" width="1482" height="872" key="DiffContextDialog" timestamp="1599860583943">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="242" y="117" width="1482" height="872" key="DiffContextDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1599852124707" />
+    <state x="242" y="117" width="1482" height="872" key="DiffContextDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1599860583943" />
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1599819769028">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -136,10 +140,14 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="808" y="236" width="360" height="633" key="RollbackChangesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1599822612283" />
-    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1599852316754">
+    <state x="482" y="187" key="SettingsEditor" timestamp="1599860478712">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1599852316754" />
+    <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1599860478712" />
+    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1599860392547">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1599860392547" />
     <state x="774" y="467" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599771023467">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

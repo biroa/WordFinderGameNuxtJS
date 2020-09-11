@@ -25,7 +25,7 @@
       hide-header-close
       id="modal-prevent-closing"
       ref="modal"
-      title="WordFinderGameNuxtJS"
+      :title="projectTitle"
       @show="resetModal"
       @hidden="resetModal"
       @ok="handleOk"
@@ -52,6 +52,7 @@
 
 <script>
 export default {
+  props: ['projectTitle'],
   data () {
     return {
       name: '',
@@ -85,6 +86,8 @@ export default {
       }
       // Push the name to submitted names
       this.submittedNames.push(this.name)
+      console.log(this.submittedNames)
+      this.$root.$emit('eventing', this.submittedNames)
       // Hide the modal manually
       this.$nextTick(() => {
         this.$bvModal.hide('modal-prevent-closing')
