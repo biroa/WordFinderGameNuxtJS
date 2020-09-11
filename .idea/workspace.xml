@@ -10,8 +10,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b43ee02-bb45-445b-aab0-17e22e1d710f" name="Default Changelist" comment="">
+    <list default="true" id="3b43ee02-bb45-445b-aab0-17e22e1d710f" name="Default Changelist" comment="Passing project name through props">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordFinderGameNuxtJS/components/TheFooter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/WordFinderGameNuxtJS/components/TheFooter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordFinderGameNuxtJS/components/TheGameStartModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/WordFinderGameNuxtJS/components/TheGameStartModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordFinderGameNuxtJS/components/TheHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/WordFinderGameNuxtJS/components/TheHeader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordFinderGameNuxtJS/components/TheRulesModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/WordFinderGameNuxtJS/components/TheRulesModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordFinderGameNuxtJS/components/TheScoreBoardModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/WordFinderGameNuxtJS/components/TheScoreBoardModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordFinderGameNuxtJS/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/WordFinderGameNuxtJS/layouts/default.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordFinderGameNuxtJS/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/WordFinderGameNuxtJS/nuxt.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordFinderGameNuxtJS/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/WordFinderGameNuxtJS/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordFinderGameNuxtJS/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/WordFinderGameNuxtJS/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WordFinderGameNuxtJS/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/WordFinderGameNuxtJS/pages/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +41,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../play_with_vue" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="$USER_HOME$/.nvm/versions/node/v12.18.3/bin/node" />
@@ -52,12 +61,31 @@
       <updated>1599650020845</updated>
       <workItem from="1599650022183" duration="19054000" />
       <workItem from="1599728778487" duration="6660000" />
-      <workItem from="1599736429977" duration="5020000" />
+      <workItem from="1599736429977" duration="12861000" />
+      <workItem from="1599817356490" duration="9741000" />
     </task>
+    <task id="LOCAL-00001" summary="Counting the points of the dictionary's words in mounted method.">
+      <created>1599745497518</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1599745497518</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -71,10 +99,34 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Counting the points of the dictionary's words in mounted method." />
+    <option name="LAST_COMMIT_MESSAGE" value="Counting the points of the dictionary's words in mounted method." />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="839" y="444" width="933" height="556" key="#ESLint" timestamp="1599743402332">
+    <state x="839" y="444" width="933" height="556" key="#ESLint" timestamp="1599820680340">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="839" y="444" width="933" height="556" key="#ESLint/67.27.1853.1053@67.27.1853.1053" timestamp="1599743402332" />
+    <state x="839" y="444" width="933" height="556" key="#ESLint/67.27.1853.1053@67.27.1853.1053" timestamp="1599820680340" />
+    <state x="242" y="117" width="1482" height="872" key="DiffContextDialog" timestamp="1599821040883">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="242" y="117" width="1482" height="872" key="DiffContextDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1599821040883" />
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1599819769028">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1599819769028" />
+    <state x="808" y="236" width="360" height="633" key="RollbackChangesDialog" timestamp="1599822612283">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="808" y="236" width="360" height="633" key="RollbackChangesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1599822612283" />
+    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1599745513616">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1599745513616" />
+    <state x="774" y="467" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599771023467">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="774" y="467" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1853.1053@67.27.1853.1053" timestamp="1599771023467" />
   </component>
 </project>
