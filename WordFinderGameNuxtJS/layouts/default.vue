@@ -14,6 +14,11 @@
     <TheRulesModal
       :project-title="WordFinderGameNuxtJS.title"
     />
+
+    <TheMatchModal
+      :project-title="WordFinderGameNuxtJS.title"
+    />
+
     <TheScoreBoardModal
       :project-title="WordFinderGameNuxtJS.title"
     />

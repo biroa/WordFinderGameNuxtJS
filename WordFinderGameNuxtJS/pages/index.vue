@@ -140,13 +140,26 @@ export default {
       const date = today.getFullYear() + '-' + (month < 10 ? '0' + month : '' + month) + '-' + today.getDate()
       return date
     },
+    /**
+     * Match the actual word against the words.dictionary
+     * @param actualWord
+     */
+    matchingSearchedAndDictionaryWords (actualWord) {
+      const match = this.$_.contains(this.words.dictionary, actualWord)
+      if (match) {
+        this.$bvModal.show('one-match-is-found')
+      }
+    },
     handleSubmit (e) {
       // Validate
       console.log('here:', this.searchedWord)
       if (this.searchedWord === '') {
         this.errors.push('Search word can not be empty!')
       } else {
+        // We store to list all the words in the lookUpWords
         this.lookUpWords.push(this.searchedWord)
+        // We validate only the actual word against the this.searchedWord
+        this.matchingSearchedAndDictionaryWords(this.searchedWord)
         this.searchedWord = ''
       }
       e.preventDefault()

@@ -36,7 +36,8 @@ export default {
   */
   plugins: [
     { src: '~/plugins/underscore', ssr: false },
-    { src: '~/plugins/crono', ssr: false }
+    { src: '~/plugins/crono', ssr: false },
+    { src: '~/plugins/icons', ssr: false }
   ],
   /*
   ** Auto import components
