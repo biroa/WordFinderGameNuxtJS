@@ -27,16 +27,19 @@
       </b-row>
       <b-row class="pt-2">
         <b-col cols="12" md="6" lg="4">
+          <form ref="searchword" @submit.stop.prevent="handleSubmit" novalidate="true">
           <b-card class="text-left">
             <div class="bg-secondary text-light p-3">
-              <b-form>
                 <b-row class="m-3">
-                  <b-form ref="form" @submit.stop.prevent="handleSubmit">
                   <b-col cols="12" md="9" sm="6">
                     <b-form-group id="input-group-2" label-for="input-2">
                       <!--v-model="test"-->
-                      <b-form-input id="input-2" v-model="searchedWord">
-                        required placeholder="Type the word you want to find">
+                      <b-form-input
+                        id="input-2"
+                        v-model="searchedWord"
+                        required
+                        placeholder="Type the word you want to find"
+                      >
                       </b-form-input>
                     </b-form-group>
                   </b-col>
@@ -47,11 +50,23 @@
                       </b-button>
                     </b-form-group>
                   </b-col>
-                  </b-form>
                 </b-row>
-              </b-form>
             </div>
           </b-card>
+          <div class="pt-2">
+            <b-alert
+              v-if="errors.length"
+              show
+              variant="danger"
+            >
+              <b>Please correct the following error(s):</b>
+              <ul>
+                <li>
+                  {{ errors[0] }}
+                </li>
+              </ul>
+            </b-alert>
+          </div>
           <b-card class="text-left mt-2">
             <div class="bg-secondary text-light p-3">
               <p>Your searches:</p>
@@ -62,6 +77,7 @@
               </ul>
             </div>
           </b-card>
+          </form>
         </b-col>
         <b-col cols="12" md="6" lg="8">
           <b-card class="text-left">
@@ -79,31 +95,32 @@
 
 <script>
 export default {
+  // get the data from the dictionary json
   async asyncData ({ $content, params }) {
     const words = await $content('dictionary', params.slug).fetch()
     const charsOfWord = []
     for (const word of words.dictionary) {
       const chars = word.split('')
-      charsOfWord.push(chars)
-      // console.log(chars, typeof chars)
+      charsOfWord.push(chars) // Letters of array from the original words
     }
-    console.log(charsOfWord)
     return { words, charsOfWord }
   },
   data () {
     return {
-      searchedWord: '',
-      charsOfWord: [],
-      lookUpWords: [],
-      currentTime: undefined,
-      username: undefined
+      searchedWord: '', // Input field model
+      errors: [], // Input data error bag
+      charsOfWord: [], // Letters of array from the original words
+      lookUpWords: [], // Array with the words from the the current searches
+      currentTime: null,
+      username: null
     }
   },
   mounted () {
     const sanitized = []
+    // Remove the redundant characters from the array
     for (let i = 0; i < this.charsOfWord.length; i++) {
       const word = this.$_.unique(this.charsOfWord[i])
-      sanitized.push({ word: word.toString(), point: word.length })
+      sanitized.push({ word: word.toString(), point: word.length }) // Non redundant letters of the words with point
     }
     console.log(sanitized)
 
@@ -123,11 +140,16 @@ export default {
       const date = today.getFullYear() + '-' + (month < 10 ? '0' + month : '' + month) + '-' + today.getDate()
       return date
     },
-    handleSubmit () {
-      // Push the name to submitted names
-      this.lookUpWords.push(this.searchedWord)
-      this.searchedWord = ''
-      console.log(this.lookUpWords)
+    handleSubmit (e) {
+      // Validate
+      console.log('here:', this.searchedWord)
+      if (this.searchedWord === '') {
+        this.errors.push('Search word can not be empty!')
+      } else {
+        this.lookUpWords.push(this.searchedWord)
+        this.searchedWord = ''
+      }
+      e.preventDefault()
     }
   },
   cron: {
