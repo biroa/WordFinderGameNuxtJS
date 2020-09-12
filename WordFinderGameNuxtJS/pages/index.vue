@@ -112,17 +112,19 @@ export default {
       charsOfWord: [], // Letters of array from the original words
       lookUpWords: [], // Array with the words from the the current searches
       currentTime: null,
-      username: null
+      username: null,
+      sanitized: []
     }
   },
   mounted () {
-    const sanitized = []
+    // const sanitized = []
     // Remove the redundant characters from the array
     for (let i = 0; i < this.charsOfWord.length; i++) {
+      const original = this.charsOfWord[i].join('')
       const word = this.$_.unique(this.charsOfWord[i])
-      sanitized.push({ word: word.toString(), point: word.length }) // Non redundant letters of the words with point
+      this.sanitized.push({ word: original, sanitizedLetters: word.toString(), point: word.length }) // Non redundant letters of the words with point
     }
-    console.log(sanitized)
+    console.log(this.sanitized)
 
     // Check the Event Bus solution too. It is much better !!!
     // https://stackoverflow.com/questions/38616167/communication-between-sibling-components-in-vuejs-2-0
@@ -140,6 +142,26 @@ export default {
       const date = today.getFullYear() + '-' + (month < 10 ? '0' + month : '' + month) + '-' + today.getDate()
       return date
     },
+    writeOutTheMatchToTheLog (actualWord) {
+      for (const i in this.sanitized) {
+        const currentRow = this.sanitized[i]
+        console.log(actualWord, currentRow)
+        if (currentRow.word === actualWord) {
+          const log = currentRow
+          log.username = this.username
+          // eslint-disable-next-line no-undef
+          this.$store.commit('localStorage/set',
+            {
+              point: log.point,
+              username: log.username,
+              time: this.currentTime,
+              word: log.word
+            }
+          )
+          console.log(log)
+        }
+      }
+    },
     /**
      * Match the actual word against the words.dictionary
      * @param actualWord
@@ -148,11 +170,15 @@ export default {
       const match = this.$_.contains(this.words.dictionary, actualWord)
       if (match) {
         this.$bvModal.show('one-match-is-found')
+        this.writeOutTheMatchToTheLog(actualWord)
       }
     },
+    /**
+     * Form Submit Handling
+     * @param e
+     */
     handleSubmit (e) {
       // Validate
-      console.log('here:', this.searchedWord)
       if (this.searchedWord === '') {
         this.errors.push('Search word can not be empty!')
       } else {

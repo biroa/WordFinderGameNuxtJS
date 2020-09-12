@@ -58,7 +58,12 @@ export default {
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
     // Doc: https://github.com/nuxt/content
-    '@nuxt/content'
+    '@nuxt/content',
+    // https://github.com/rubystarashe/nuxt-vuex-localstorage
+    ['nuxt-vuex-localstorage', {
+      mode: 'debug',
+      localStorage: ['localStorage']
+    }]
   ],
   /*
   ** Content module configuration
@@ -70,5 +75,14 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+    /*
+    ** You can extend webpack config here
+    */
+    transpile: [
+      'nuxt-vuex-localstorage'
+    ],
+    extend (config, ctx) {
+
+    }
   }
 }

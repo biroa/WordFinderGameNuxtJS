@@ -1,5 +1,5 @@
 <template>
-  <b-modal id="one-match-is-found" hide-footer>
+  <b-modal id="one-match-is-found" hide-footer hide-header-close no-close-on-backdrop no-close-on-esc>
     <template v-slot:modal-title>
       {{projectTitle}}
     </template>
@@ -26,17 +26,28 @@
         </b-iconstack>
       </div>
     </div>
-    <b-button class="mt-3" block @click="$bvModal.hide('one-match-is-found'), $bvModal.show('modal-prevent-closing')">Play Again</b-button>
-    <div>
-      <p class="h4 mb-2">
-        <b-icon class="left-0" icon="exclamation-circle-fill"></b-icon>
-        <b-icon class="right-0" icon="exclamation-circle-fill"></b-icon>
-      </p>
+    <div class="d-block text-center mt-2">
+      <b-button-group>
+        <b-button variant="success" @click="$bvModal.hide('one-match-is-found'), $bvModal.show('modal-prevent-closing')">
+          <b-icon icon="play"></b-icon> Play Again
+        </b-button>
+        <b-button variant="danger" @click="$bvModal.hide('one-match-is-found'), $bvModal.show('modal-scoreboard')" >
+          <b-icon icon="bullseye"></b-icon> Scoreboard
+        </b-button>
+        <b-button variant="warning" @click="$bvModal.hide('one-match-is-found'), $bvModal.show('modal-scrollable')" >
+          <b-icon icon="info-circle-fill"></b-icon> Rules
+        </b-button>
+      </b-button-group>
     </div>
   </b-modal>
 </template>
 <script>
 export default {
-  props: ['projectTitle']
+  props: {
+    projectTitle: {
+      type: String,
+      default: ''
+    }
+  }
 }
 </script>

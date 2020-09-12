@@ -8,7 +8,7 @@
     <b-collapse id="nav-collapse-top" is-nav>
       <b-navbar-nav>
         <b-nav-item href="#" v-b-modal.modal-prevent-closing>Dashboard</b-nav-item>
-        <b-nav-item href="#" v-b-modal.modal-1>Scoreboard</b-nav-item>
+        <b-nav-item href="#" v-b-modal.modal-scoreboard>Scoreboard</b-nav-item>
         <b-nav-item href="#" v-b-modal.modal-scrollable>Rules</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
