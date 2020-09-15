@@ -72,7 +72,7 @@
               <p>Your searches:</p>
               <ul>
                 <li v-for="(item, index) in lookUpWords" :key="index">
-                  {{ item }}
+                  {{ item.toLowerCase() }}
                 </li>
               </ul>
             </div>
@@ -182,10 +182,10 @@ export default {
       if (this.searchedWord === '') {
         this.errors.push('Search word can not be empty!')
       } else {
-        // We store to list all the words in the lookUpWords
-        this.lookUpWords.push(this.searchedWord)
-        // We validate only the actual word against the this.searchedWord
-        this.matchingSearchedAndDictionaryWords(this.searchedWord)
+        // We store to list all the lower cased words in the lookUpWords
+        this.lookUpWords.push(this.searchedWord.toLowerCase())
+        // We validate only the lower cased searched words against the words in the dictionary
+        this.matchingSearchedAndDictionaryWords(this.searchedWord.toLowerCase())
         this.searchedWord = ''
       }
       e.preventDefault()
