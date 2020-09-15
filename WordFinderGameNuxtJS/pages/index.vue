@@ -67,9 +67,28 @@
               </ul>
             </b-alert>
           </div>
+            <div class="pt-2">
+              <b-alert
+                :show="dismissCountDown"
+                dismissible
+                variant="warning"
+                @dismissed="dismissCountDown=0"
+                @dismiss-count-down="countDownChanged"
+              >
+                <p>
+                  We did not find any match! {{ dismissCountDown }}
+                </p>
+                <b-progress
+                  variant="warning"
+                  :max="dismissSecs"
+                  :value="dismissCountDown"
+                  height="4px"
+                ></b-progress>
+              </b-alert>
+            </div>
           <b-card class="text-left mt-2">
             <div class="bg-secondary text-light p-3">
-              <p>Your searches:</p>
+              <p>Not Found Searches:</p>
               <ul>
                 <li v-for="(item, index) in lookUpWords" :key="index">
                   {{ item.toLowerCase() }}
@@ -89,7 +108,6 @@
       </b-row>
     </b-container>
     <!-- Container -->
-    <nuxt-content :document="words" />
   </div>
 </template>
 
@@ -113,7 +131,11 @@ export default {
       lookUpWords: [], // Array with the words from the the current searches
       currentTime: null,
       username: null,
-      sanitized: []
+      sanitized: [],
+      // alert related parameters
+      dismissSecs: 8,
+      dismissCountDown: 0,
+      showDismissibleAlert: false
     }
   },
   mounted () {
@@ -171,6 +193,8 @@ export default {
       if (match) {
         this.$bvModal.show('one-match-is-found')
         this.writeOutTheMatchToTheLog(actualWord)
+      } else {
+        this.showAlert()
       }
     },
     /**
@@ -189,6 +213,19 @@ export default {
         this.searchedWord = ''
       }
       e.preventDefault()
+    },
+    /**
+     * Alert countdown
+     * @param dismissCountDown
+     */
+    countDownChanged (dismissCountDown) {
+      this.dismissCountDown = dismissCountDown
+    },
+    /**
+     *
+     */
+    showAlert () {
+      this.dismissCountDown = this.dismissSecs
     }
   },
   cron: {
