@@ -34,7 +34,12 @@ export default {
   },
   data () {
     return {
-      fields: ['username', 'time', 'word', 'point'],
+      fields: [
+        { key: 'username', sortable: true },
+        'time',
+        'word',
+        { key: 'point', sortable: true }
+      ],
       items: this.$store.state.localStorage.ranks,
       tableVariants: [
         'primary',
