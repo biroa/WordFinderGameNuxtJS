@@ -6,7 +6,7 @@ export const mutations = {
   set: (state, payload) => {
     state.ranks.push({
       point: payload.point,
-      username: payload.name,
+      username: payload.username,
       time: payload.time,
       word: payload.word
     }

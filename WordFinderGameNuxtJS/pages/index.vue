@@ -82,7 +82,7 @@
         <b-col cols="12" md="6" lg="8">
           <b-card class="text-left">
             <div class="bg-secondary text-light p-3">
-              Table
+              <TheRankTable />
             </div>
           </b-card>
         </b-col>

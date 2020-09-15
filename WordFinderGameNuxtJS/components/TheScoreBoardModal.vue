@@ -2,7 +2,7 @@
   <!-- Scoreboard Modals -->
   <b-modal id="modal-scoreboard" :title="projectTitle">
     <p class="my-4">
-      Hello from TheScoreBoardModal!
+      <TheRankTable :height="250 + 'px'" />
     </p>
     <template v-slot:modal-footer="{}">
       <b-button-group>
