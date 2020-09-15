@@ -139,15 +139,12 @@ export default {
     }
   },
   mounted () {
-    // const sanitized = []
     // Remove the redundant characters from the array
     for (let i = 0; i < this.charsOfWord.length; i++) {
       const original = this.charsOfWord[i].join('')
       const word = this.$_.unique(this.charsOfWord[i])
       this.sanitized.push({ word: original, sanitizedLetters: word.toString(), point: word.length }) // Non redundant letters of the words with point
     }
-    console.log(this.sanitized)
-
     // Check the Event Bus solution too. It is much better !!!
     // https://stackoverflow.com/questions/38616167/communication-between-sibling-components-in-vuejs-2-0
     this.$root.$on('eventing', (data) => {
@@ -158,34 +155,42 @@ export default {
     load () {
       this.currentTime = (new Date().toLocaleTimeString())
     },
+    /**
+     * Get the current date
+     */
     getDate () {
       const today = new Date()
       const month = today.getMonth() + 1
       const date = today.getFullYear() + '-' + (month < 10 ? '0' + month : '' + month) + '-' + today.getDate()
       return date
     },
+    /**
+     * Write the scores in to the localStorage
+     * @param actualWord
+     */
     writeOutTheMatchToTheLog (actualWord) {
       for (const i in this.sanitized) {
         const currentRow = this.sanitized[i]
-        console.log(actualWord, currentRow)
         if (currentRow.word === actualWord) {
           const log = currentRow
           log.username = this.username
-          // eslint-disable-next-line no-undef
-          this.$store.commit('localStorage/set',
-            {
-              point: log.point,
-              username: log.username,
-              time: this.currentTime,
-              word: log.word
-            }
-          )
-          console.log(log)
+          // Insert into the storage if we do not have it there yet
+          if (this.$_.findIndex(this.$store.state.localStorage.ranks, { word: actualWord }) >= 0) {
+            // eslint-disable-next-line no-undef
+            this.$store.commit('localStorage/set',
+              {
+                point: log.point,
+                username: log.username,
+                time: this.currentTime,
+                word: log.word
+              }
+            )
+          }
         }
       }
     },
     /**
-     * Match the actual word against the words.dictionary
+     * Match the actual word against the words.dictionary.JSON
      * @param actualWord
      */
     matchingSearchedAndDictionaryWords (actualWord) {
@@ -222,7 +227,7 @@ export default {
       this.dismissCountDown = dismissCountDown
     },
     /**
-     *
+     * Show alert messages
      */
     showAlert () {
       this.dismissCountDown = this.dismissSecs
@@ -236,42 +241,4 @@ export default {
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
