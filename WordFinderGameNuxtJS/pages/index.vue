@@ -145,7 +145,7 @@ export default {
       const word = this.$_.unique(this.charsOfWord[i])
       this.sanitized.push({ word: original, sanitizedLetters: word.toString().toLowerCase(), point: word.length }) // Non redundant letters of the words with point
     }
-    console.log(this.sanitized)
+
     // Check the Event Bus solution too. It is much better !!!
     // https://stackoverflow.com/questions/38616167/communication-between-sibling-components-in-vuejs-2-0
     this.$root.$on('eventing', (data) => {
@@ -195,9 +195,6 @@ export default {
      * @param actualWord
      */
     matchingSearchedAndDictionaryWords (actualWord) {
-      console.log(this.words.dictionary)
-      console.log(actualWord)
-      // const match = this.$_.contains(this.words.dictionary.sanitized, actualWord)
       if (this.$_.findIndex(this.$store.state.localStorage.ranks, { word: actualWord }) === -1) {
         this.$bvModal.show('one-match-is-found')
         this.writeOutTheMatchToTheLog(actualWord)
