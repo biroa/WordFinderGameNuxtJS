@@ -175,7 +175,7 @@ export default {
           const log = currentRow
           log.username = this.username
           // Insert into the storage if we do not have it there yet
-          if (this.$_.findIndex(this.$store.state.localStorage.ranks, { word: actualWord }) >= 0) {
+          if (this.$_.findIndex(this.$store.state.localStorage.ranks, { word: actualWord }) === -1) {
             // eslint-disable-next-line no-undef
             this.$store.commit('localStorage/set',
               {

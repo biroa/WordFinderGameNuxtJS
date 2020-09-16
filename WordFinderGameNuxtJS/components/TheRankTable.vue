@@ -1,6 +1,7 @@
 <template>
   <div>
     <b-table
+      v-if="this.$store.state.localStorage.ranks.length"
       :striped="striped"
       :bordered="bordered"
       :borderless="borderless"
@@ -18,6 +19,7 @@
       :sticky-header="height"
       responsive
     ></b-table>
+    <div v-else>The localStorage is empty</div>
   </div>
 </template>
 
