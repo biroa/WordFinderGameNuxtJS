@@ -88,7 +88,7 @@
             </div>
           <b-card class="text-left mt-2">
             <div class="bg-secondary text-light p-3">
-              <p>Not Found Searches:</p>
+              <p>Previous Searches:</p>
               <ul>
                 <li v-for="(item, index) in lookUpWords" :key="index">
                   {{ item.toLowerCase() }}
@@ -141,10 +141,11 @@ export default {
   mounted () {
     // Remove the redundant characters from the array
     for (let i = 0; i < this.charsOfWord.length; i++) {
-      const original = this.charsOfWord[i].join('')
+      const original = this.charsOfWord[i].join('').toLowerCase()
       const word = this.$_.unique(this.charsOfWord[i])
-      this.sanitized.push({ word: original, sanitizedLetters: word.toString(), point: word.length }) // Non redundant letters of the words with point
+      this.sanitized.push({ word: original, sanitizedLetters: word.toString().toLowerCase(), point: word.length }) // Non redundant letters of the words with point
     }
+    console.log(this.sanitized)
     // Check the Event Bus solution too. It is much better !!!
     // https://stackoverflow.com/questions/38616167/communication-between-sibling-components-in-vuejs-2-0
     this.$root.$on('eventing', (data) => {
@@ -194,8 +195,10 @@ export default {
      * @param actualWord
      */
     matchingSearchedAndDictionaryWords (actualWord) {
-      const match = this.$_.contains(this.words.dictionary, actualWord)
-      if (match) {
+      console.log(this.words.dictionary)
+      console.log(actualWord)
+      // const match = this.$_.contains(this.words.dictionary.sanitized, actualWord)
+      if (this.$_.findIndex(this.$store.state.localStorage.ranks, { word: actualWord }) === -1) {
         this.$bvModal.show('one-match-is-found')
         this.writeOutTheMatchToTheLog(actualWord)
       } else {

@@ -46,6 +46,19 @@
           />
         </b-form-group>
       </form>
+      <template v-slot:modal-footer="{ ok }">
+        <b-button-group>
+          <b-button variant="secondary" @click="ok()" >
+            <b-icon icon="bullseye"></b-icon> Ok
+          </b-button>
+          <b-button variant="secondary" @click="$bvModal.hide('modal-scrollable'), $bvModal.show('modal-scoreboard')" >
+            <b-icon icon="bullseye"></b-icon> Scoreboard
+          </b-button>
+          <b-button variant="secondary" @click="$bvModal.hide('modal-scoreboard'), $bvModal.show('modal-scrollable')" >
+            <b-icon icon="info-circle-fill"></b-icon> Rules
+          </b-button>
+        </b-button-group>
+      </template>
     </b-modal>
   </div>
 </template>

@@ -28,13 +28,13 @@
     </div>
     <div class="d-block text-center mt-2">
       <b-button-group>
-        <b-button variant="success" @click="$bvModal.hide('one-match-is-found'), $bvModal.show('modal-prevent-closing')">
+        <b-button variant="secondary" @click="$bvModal.hide('one-match-is-found'), $bvModal.show('modal-prevent-closing')">
           <b-icon icon="play"></b-icon> Play Again
         </b-button>
-        <b-button variant="danger" @click="$bvModal.hide('one-match-is-found'), $bvModal.show('modal-scoreboard')" >
+        <b-button variant="secondary" @click="$bvModal.hide('one-match-is-found'), $bvModal.show('modal-scoreboard')" >
           <b-icon icon="bullseye"></b-icon> Scoreboard
         </b-button>
-        <b-button variant="warning" @click="$bvModal.hide('one-match-is-found'), $bvModal.show('modal-scrollable')" >
+        <b-button variant="secondary" @click="$bvModal.hide('one-match-is-found'), $bvModal.show('modal-scrollable')" >
           <b-icon icon="info-circle-fill"></b-icon> Rules
         </b-button>
       </b-button-group>

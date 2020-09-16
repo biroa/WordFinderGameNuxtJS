@@ -6,10 +6,10 @@
     </p>
     <template v-slot:modal-footer="{}">
       <b-button-group>
-        <b-button variant="success" @click="$bvModal.hide('modal-scrollable'), $bvModal.show('modal-prevent-closing')">
+        <b-button variant="secondary" @click="$bvModal.hide('modal-scrollable'), $bvModal.show('modal-prevent-closing')">
           <b-icon icon="play"></b-icon> Play Again
         </b-button>
-        <b-button variant="danger" @click="$bvModal.hide('modal-scrollable'), $bvModal.show('modal-scoreboard')" >
+        <b-button variant="secondary" @click="$bvModal.hide('modal-scrollable'), $bvModal.show('modal-scoreboard')" >
           <b-icon icon="bullseye"></b-icon> Scoreboard
         </b-button>
       </b-button-group>
