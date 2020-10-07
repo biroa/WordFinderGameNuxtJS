@@ -33,3 +33,54 @@
    - Run the Following Commands
       - npm install
       - npm run dev
+
+## Wireframes
+
+#### Login
+
+   - Modal window automatically pops up. You have to fill it out the input to play!! 
+   - Buttons: Game Start, Rules of the Game, Top list 
+   
+![N|Solid](https://github.com/biroa/WordFinderGameNuxtJS/blob/master/wireframes/Register%26Play.png)
+
+
+#### Dashboard
+
+   - Logo 
+   - Navigation menu at the top 
+   - Current Date, Time/Stopwatch, Player Name 
+   - Search box, previously used words that could not find list 
+   - Current Top List 
+
+![N|Solid](https://github.com/biroa/WordFinderGameNuxtJS/blob/master/wireframes/Dashboard.png)
+
+
+
+#### You won!
+
+- Modal window automatically pops up  when a user has found a word from the list 
+- Buttons: New Game Start, Rules of the Game, Top list 
+- Congratulation message 
+
+![N|Solid](https://github.com/biroa/WordFinderGameNuxtJS/blob/master/wireframes/OneWordIsFound.png)
+
+
+#### Rules
+
+- Modal window automatically pops up, with the rules of the game 
+- Buttons: New Game Start, Rules of the Game, Top list 
+
+
+![N|Solid](https://github.com/biroa/WordFinderGameNuxtJS/blob/master/wireframes/Rules.png)
+
+
+#### Score Board
+
+- Modal window automatically pops up, with previous player achievements 
+- Buttons: New Game Start, Rules of the Game, Top list 
+
+![N|Solid](https://github.com/biroa/WordFinderGameNuxtJS/blob/master/wireframes/ScoreBoard.png)
+
+### Notes
+   - The English and the Hungarian Specifications of the app are in the spec folder
+   - The Hungarian Documentation of the task is in the spec folder too but the English version is in progress
