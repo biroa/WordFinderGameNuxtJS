@@ -83,4 +83,4 @@
 
 ### Notes
    - The English and the Hungarian Specifications of the app are in the spec folder
-   - The Hungarian Documentation of the task is in the spec folder too but the English version is in progress
+   - The Hungarian Documentation of the task is in the specs folder too but the English version is in progress
